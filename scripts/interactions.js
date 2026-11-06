@@ -46,35 +46,27 @@ const Interactions = (() => {
         return closest;
     }
 
-    function update(player, keys) {
+  
+function update(player, keys) {
 
-        nearbyObject = findNearby(player);
+    nearbyObject = findNearby(player);
 
-        if (!nearbyObject) {
-            examinedObjectId = null;
-            return "";
-        }
-
-        if (keys["e"] === true) {
-            examinedObjectId = nearbyObject.id;
-        }
-
-        if (examinedObjectId === nearbyObject.id) {
-            return nearbyObject.name + ": " +
-                nearbyObject.description;
-        }
-
-        return "Press E to examine " + nearbyObject.name;
+    if (!nearbyObject) {
+        examinedObjectId = null;
+        return "";
     }
 
-    function getObjects() {
-        return objects;
+    // E must be pressed to examine.
+    if (keys["e"] === true) {
+        examinedObjectId = nearbyObject.id;
+
+        return nearbyObject.name + ": " +
+            nearbyObject.description;
     }
 
-    return {
-        initialize,
-        update,
-        getObjects
-    };
+    // Restore the prompt whenever E isn't pressed.
+    examinedObjectId = null;
 
-})();
+    return "Press E to examine " +
+        nearbyObject.name;
+}
