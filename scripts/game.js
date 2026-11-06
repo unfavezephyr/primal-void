@@ -85,12 +85,13 @@ function update(deltaTime) {
 function render() {
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
-    // Draw world relative to camera
     World.draw(ctx, camera);
 
-    // Draw player relative to camera
-    ctx.save();
+    // Draw glowing crystals
+    Environment.draw(ctx, camera, performance.now());
 
+    // Draw player
+    ctx.save();
     ctx.translate(-camera.x, -camera.y);
 
     Player.draw(ctx);
