@@ -70,3 +70,11 @@ function update(player, keys) {
     return "Press E to examine " +
         nearbyObject.name;
 }
+   return {
+    initialize,
+    update,
+    getObjects
+};
+
+})();
+
