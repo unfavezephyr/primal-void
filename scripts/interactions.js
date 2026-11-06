@@ -6,7 +6,7 @@
 
 const Interactions = (() => {
 
-    const INTERACTION_RANGE = 65;
+const INTERACTION_RANGE = 100;
 
     let objects = [];
 
