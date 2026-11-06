@@ -1,7 +1,7 @@
 
 /* =========================================
    PRIMAL VOID
-   INTERACTION SYSTEM - VERSION 0.2
+   INTERACTION SYSTEM - VERSION 0.3
 ========================================= */
 
 const Interactions = (() => {
@@ -12,15 +12,11 @@ const Interactions = (() => {
     let objects = [];
     let nearbyObject = null;
     let examinedObjectId = null;
-    let previousE = false;
 
     function initialize() {
-
         objects = Environment.getCrystals();
-
         nearbyObject = null;
         examinedObjectId = null;
-        previousE = false;
     }
 
     function findNearby(player) {
@@ -33,12 +29,12 @@ const Interactions = (() => {
 
         for (const object of objects) {
 
-            const ox = object.x * TILE_SIZE + TILE_SIZE / 2;
-            const oy = object.y * TILE_SIZE + TILE_SIZE / 2;
+            const cx = object.x * TILE_SIZE + 20;
+            const cy = object.y * TILE_SIZE + 20;
 
             const distance = Math.hypot(
-                px - ox,
-                py - oy
+                px - cx,
+                py - cy
             );
 
             if (distance <= closestDistance) {
@@ -54,22 +50,16 @@ const Interactions = (() => {
 
         nearbyObject = findNearby(player);
 
-        const ePressed =
-            Boolean(keys["e"]) && !previousE;
-
-        previousE = Boolean(keys["e"]);
-
         if (!nearbyObject) {
             examinedObjectId = null;
             return "";
         }
 
-        if (ePressed) {
+        if (keys["e"] === true) {
             examinedObjectId = nearbyObject.id;
         }
 
         if (examinedObjectId === nearbyObject.id) {
-
             return nearbyObject.name + ": " +
                 nearbyObject.description;
         }
@@ -77,15 +67,14 @@ const Interactions = (() => {
         return "Press E to examine " + nearbyObject.name;
     }
 
- function getObjects() {
-    return objects;
-}
+    function getObjects() {
+        return objects;
+    }
 
-return {
-    initialize,
-    update,
-    getObjects
-};
+    return {
+        initialize,
+        update,
+        getObjects
+    };
 
 })();
-
