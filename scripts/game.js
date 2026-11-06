@@ -1,8 +1,7 @@
 
 /* =========================================
    PRIMAL VOID
-   MAIN GAME ENGINE - VERSION 0.3
-   Expanded world + following camera
+   MAIN GAME ENGINE - VERSION 0.4
 ========================================= */
 
 const canvas = document.getElementById("game-canvas");
@@ -27,7 +26,7 @@ const camera = {
 };
 
 // KEYBOARD INPUT
-window.addEventListener("keydown", (event) => {
+window.addEventListener("keydown", event => {
     const key = event.key.toLowerCase();
 
     if (
@@ -40,7 +39,7 @@ window.addEventListener("keydown", (event) => {
     keys[key] = true;
 });
 
-window.addEventListener("keyup", (event) => {
+window.addEventListener("keyup", event => {
     keys[event.key.toLowerCase()] = false;
 });
 
@@ -78,6 +77,19 @@ function updateCamera() {
 // UPDATE
 function update(deltaTime) {
     Player.update(deltaTime, keys, isBlocked);
+
+    const message = Interactions.update(
+        Player.state,
+        keys
+    );
+
+    if (message) {
+        encounterMessage.textContent = message;
+    } else {
+        encounterMessage.textContent =
+            "Explore the mysterious world.";
+    }
+
     updateCamera();
 }
 
@@ -121,6 +133,8 @@ function startGame() {
     World.generate();
 
     Player.reset(400, 300);
+
+    Interactions.initialize();
 
     updateCamera();
 
