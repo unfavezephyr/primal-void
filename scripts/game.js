@@ -76,19 +76,13 @@ function updateCamera() {
 
 // UPDATE
 function update(deltaTime) {
+
     Player.update(deltaTime, keys, isBlocked);
 
-    const message = Interactions.update(
-        Player.state,
-        keys
-    );
+    const message = Interactions.update(Player.state, keys);
 
-    if (message) {
-        encounterMessage.textContent = message;
-    } else {
-        encounterMessage.textContent =
-            "Explore the mysterious world.";
-    }
+    encounterMessage.textContent = message ||
+        "Explore the mysterious world.";
 
     updateCamera();
 }
