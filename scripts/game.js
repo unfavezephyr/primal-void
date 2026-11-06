@@ -79,10 +79,15 @@ function update(deltaTime) {
 
     Player.update(deltaTime, keys, isBlocked);
 
-    const message = Interactions.update(Player.state, keys);
+    const message = Interactions.update(
+        Player.state,
+        keys
+    );
 
-    encounterMessage.textContent = message ||
-        "Explore the mysterious world.";
+    if (encounterMessage) {
+        encounterMessage.textContent = message ||
+            "Explore the mysterious world.";
+    }
 
     updateCamera();
 }
