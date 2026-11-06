@@ -1,10 +1,10 @@
 
 /* =========================================
    PRIMAL VOID
-   INTERACTION SYSTEM - VERSION 0.3
+   INTERACTION SYSTEM - VERSION 0.2
 ========================================= */
 
-const Interactions = (() => {
+window.Interactions = (() => {
 
     const TILE_SIZE = 40;
     const RANGE = 75;
@@ -14,12 +14,57 @@ const Interactions = (() => {
     let examinedObjectId = null;
 
     function initialize() {
-        objects = Environment.getCrystals();
+
+        objects = [
+            {
+                id: "crystal_001",
+                name: "Violet Crystal",
+                x: 7,
+                y: 8,
+                description: "A violet crystal humming with strange energy."
+            },
+            {
+                id: "crystal_002",
+                name: "Azure Crystal",
+                x: 19,
+                y: 11,
+                description: "A blue crystal containing a faint inner light."
+            },
+            {
+                id: "crystal_003",
+                name: "Violet Crystal",
+                x: 23,
+                y: 20,
+                description: "Its surface seems to shift when you look at it."
+            },
+            {
+                id: "crystal_004",
+                name: "Verdant Crystal",
+                x: 34,
+                y: 8,
+                description: "A green crystal radiating gentle warmth."
+            },
+            {
+                id: "crystal_005",
+                name: "Azure Crystal",
+                x: 11,
+                y: 25,
+                description: "A mysterious blue crystal."
+            },
+            {
+                id: "crystal_006",
+                name: "Violet Crystal",
+                x: 36,
+                y: 24,
+                description: "A purple crystal with an unusual glow."
+            }
+        ];
+
         nearbyObject = null;
         examinedObjectId = null;
     }
 
-    function findNearby(player) {
+    function update(player, keys) {
 
         const px = player.x + player.width / 2;
         const py = player.y + player.height / 2;
@@ -29,52 +74,44 @@ const Interactions = (() => {
 
         for (const object of objects) {
 
-            const cx = object.x * TILE_SIZE + 20;
-            const cy = object.y * TILE_SIZE + 20;
+            const ox = object.x * TILE_SIZE + TILE_SIZE / 2;
+            const oy = object.y * TILE_SIZE + TILE_SIZE / 2;
 
-            const distance = Math.hypot(
-                px - cx,
-                py - cy
-            );
+            const distance = Math.hypot(px - ox, py - oy);
 
-            if (distance <= closestDistance) {
+            if (distance < closestDistance) {
                 closest = object;
                 closestDistance = distance;
             }
         }
 
-        return closest;
-    }
+        nearbyObject = closest;
 
-  
-function update(player, keys) {
+        if (!nearbyObject) {
+            examinedObjectId = null;
+            return "";
+        }
 
-    nearbyObject = findNearby(player);
+        if (keys["e"]) {
+            examinedObjectId = nearbyObject.id;
 
-    if (!nearbyObject) {
+            return nearbyObject.name + ": " +
+                nearbyObject.description;
+        }
+
         examinedObjectId = null;
-        return "";
+
+        return "Press E to examine " + nearbyObject.name;
     }
 
-    // E must be pressed to examine.
-    if (keys["e"] === true) {
-        examinedObjectId = nearbyObject.id;
-
-        return nearbyObject.name + ": " +
-            nearbyObject.description;
+    function getObjects() {
+        return objects;
     }
 
-    // Restore the prompt whenever E isn't pressed.
-    examinedObjectId = null;
-
-    return "Press E to examine " +
-        nearbyObject.name;
-}
-   return {
-    initialize,
-    update,
-    getObjects
-};
+    return {
+        initialize,
+        update,
+        getObjects
+    };
 
 })();
-
