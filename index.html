@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Primal Void</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <main id="game-container">
@@ -24,16 +21,10 @@
             <div id="title-screen">
                 <h2>PRIMAL VOID</h2>
                 <p>Discover. Explore. Evolve.</p>
-
-                <button id="start-button">
-                    BEGIN JOURNEY
-                </button>
+                <button id="start-button">BEGIN JOURNEY</button>
             </div>
 
-            <canvas id="game-canvas"
-                width="800"
-                height="600">
-            </canvas>
+            <canvas id="game-canvas" width="800" height="600"></canvas>
 
             <div id="game-ui">
                 <div id="player-info">
@@ -49,12 +40,13 @@
         </section>
 
         <footer>
-            <p>PRIMAL VOID | Version 0.1</p>
+            <p>PRIMAL VOID | Version 0.2</p>
             <p>WASD / ARROW KEYS TO MOVE</p>
         </footer>
 
     </main>
 
+    <script src="scripts/player.js"></script>
     <script src="scripts/game.js"></script>
 
 </body>
