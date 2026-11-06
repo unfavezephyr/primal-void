@@ -77,15 +77,15 @@ const Interactions = (() => {
         return "Press E to examine " + nearbyObject.name;
     }
 
-    function getObjects() {
-        return objects;
-    }
+ function getObjects() {
+    return objects;
+}
 
-    return {
-        initialize,
-        update,
-        getObjects
-    };
+return {
+    initialize,
+    update,
+    getObjects
+};
 
 })();
 
