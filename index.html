@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Primal Void</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="game-container">
+
+        <header id="game-header">
+            <h1>PRIMAL VOID</h1>
+            <p>A world beyond the known.</p>
+        </header>
+
+        <section id="game-screen">
+
+            <div id="title-screen">
+                <h2>PRIMAL VOID</h2>
+                <p>Discover. Explore. Evolve.</p>
+
+                <button id="start-button">
+                    BEGIN JOURNEY
+                </button>
+            </div>
+
+            <canvas id="game-canvas"
+                width="800"
+                height="600">
+            </canvas>
+
+            <div id="game-ui">
+                <div id="player-info">
+                    <span>EXPLORER</span>
+                    <span id="player-location">Unknown Region</span>
+                </div>
+
+                <div id="encounter-message">
+                    Welcome to Primal Void.
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>PRIMAL VOID | Version 0.1</p>
+            <p>WASD / ARROW KEYS TO MOVE</p>
+        </footer>
+
+    </main>
+
+    <script src="scripts/game.js"></script>
+
+</body>
+</html>
+
