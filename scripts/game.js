@@ -87,10 +87,8 @@ function render() {
 
     World.draw(ctx, camera);
 
-    // Draw glowing crystals
     Environment.draw(ctx, camera, performance.now());
 
-    // Draw player
     ctx.save();
     ctx.translate(-camera.x, -camera.y);
 
