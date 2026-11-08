@@ -1,10 +1,11 @@
 
 /* =========================================
    PRIMAL VOID
-   INTERACTION SYSTEM - VERSION 0.2
+   INTERACTION SYSTEM - VERSION 0.3
 ========================================= */
 
 window.Interactions = (() => {
+
     const TILE_SIZE = 40;
     const RANGE = 75;
 
@@ -76,7 +77,10 @@ window.Interactions = (() => {
             const ox = object.x * TILE_SIZE + TILE_SIZE / 2;
             const oy = object.y * TILE_SIZE + TILE_SIZE / 2;
 
-            const distance = Math.hypot(px - ox, py - oy);
+            const distance = Math.hypot(
+                px - ox,
+                py - oy
+            );
 
             if (distance < closestDistance) {
                 closest = object;
@@ -91,30 +95,20 @@ window.Interactions = (() => {
             return "";
         }
 
-    if (keys["e"]) {
+        if (keys["e"]) {
 
-    if (examinedObjectId !== nearbyObject.id) {
-        const newlyDiscovered = Journal.record(nearbyObject);
+            if (examinedObjectId !== nearbyObject.id) {
 
-        if (newlyDiscovered) {
-            console.log(
-                "Journal updated:",
-                nearbyObject.name
-            );
+                if (typeof Journal !== "undefined") {
+                    Journal.record(nearbyObject);
+                }
+
+                examinedObjectId = nearbyObject.id;
+            }
+
+            return nearbyObject.name + ": " +
+                nearbyObject.description;
         }
-    }
-
-    examinedObjectId = nearbyObject.id;
-
-    return nearbyObject.name + ": " +
-        nearbyObject.description;
-}
-
-    examinedObjectId = nearbyObject.id;
-
-    return nearbyObject.name + ": " +
-        nearbyObject.description;
-}
 
         examinedObjectId = null;
 
@@ -122,7 +116,7 @@ window.Interactions = (() => {
     }
 
     function getObjects() {
-        return objects;
+        return [...objects];
     }
 
     return {
