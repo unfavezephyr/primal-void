@@ -93,11 +93,16 @@ window.Interactions = (() => {
         }
 
         if (keys["e"]) {
-            examinedObjectId = nearbyObject.id;
 
-            return nearbyObject.name + ": " +
-                nearbyObject.description;
-        }
+    if (examinedObjectId !== nearbyObject.id) {
+        Journal.record(nearbyObject);
+    }
+
+    examinedObjectId = nearbyObject.id;
+
+    return nearbyObject.name + ": " +
+        nearbyObject.description;
+}
 
         examinedObjectId = null;
 
