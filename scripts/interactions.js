@@ -5,7 +5,6 @@
 ========================================= */
 
 window.Interactions = (() => {
-
     const TILE_SIZE = 40;
     const RANGE = 75;
 
