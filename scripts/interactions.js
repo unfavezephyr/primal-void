@@ -92,11 +92,24 @@ window.Interactions = (() => {
             return "";
         }
 
-        if (keys["e"]) {
+    if (keys["e"]) {
 
     if (examinedObjectId !== nearbyObject.id) {
-        Journal.record(nearbyObject);
+        const newlyDiscovered = Journal.record(nearbyObject);
+
+        if (newlyDiscovered) {
+            console.log(
+                "Journal updated:",
+                nearbyObject.name
+            );
+        }
     }
+
+    examinedObjectId = nearbyObject.id;
+
+    return nearbyObject.name + ": " +
+        nearbyObject.description;
+}
 
     examinedObjectId = nearbyObject.id;
 
