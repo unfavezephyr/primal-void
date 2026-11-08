@@ -26,12 +26,37 @@
 
             <canvas id="game-canvas" width="800" height="600"></canvas>
 
-            <div id="game-ui">
-                <div id="player-info">
-                    <span>EXPLORER</span>
-                    <span id="player-location">Unknown Region</span>
-                </div>
+           <div id="game-ui">
 
+    <div id="player-info">
+        <span>EXPLORER</span>
+        <span id="player-location">Unknown Region</span>
+    </div>
+
+    <button id="journal-button">
+        DISCOVERY JOURNAL
+    </button>
+
+    <div id="encounter-message">
+        Welcome to Primal Void.
+    </div>
+
+    <div id="journal-panel" style="display: none;">
+
+        <div class="journal-header">
+            <h2>DISCOVERY JOURNAL</h2>
+            <button id="close-journal">✕</button>
+        </div>
+
+        <p id="journal-progress">
+            Discoveries: 0 / 6
+        </p>
+
+        <div id="journal-entries"></div>
+
+    </div>
+
+</div>
                 <div id="encounter-message">
                     Welcome to Primal Void.
                 </div>
