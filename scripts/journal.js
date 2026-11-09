@@ -1,7 +1,7 @@
 
 /* =========================================
    PRIMAL VOID
-   DISCOVERY JOURNAL - VERSION 0.1
+   DISCOVERY JOURNAL - VERSION 0.2
 ========================================= */
 
 window.Journal = (() => {
@@ -41,6 +41,7 @@ window.Journal = (() => {
         discoveries.push({
             id: object.id,
             name: object.name,
+            type: object.type || "Unknown",
             description: object.description,
             location: {
                 x: object.x,

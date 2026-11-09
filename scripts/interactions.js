@@ -19,6 +19,7 @@ window.Interactions = (() => {
             {
                 id: "crystal_001",
                 name: "Violet Crystal",
+                type: "Violet",
                 x: 7,
                 y: 8,
                 description: "A violet crystal humming with strange energy."
@@ -26,6 +27,7 @@ window.Interactions = (() => {
             {
                 id: "crystal_002",
                 name: "Azure Crystal",
+                type: "Azure",
                 x: 19,
                 y: 11,
                 description: "A blue crystal containing a faint inner light."
@@ -33,6 +35,7 @@ window.Interactions = (() => {
             {
                 id: "crystal_003",
                 name: "Violet Crystal",
+                type: "Violet",
                 x: 23,
                 y: 20,
                 description: "Its surface seems to shift when you look at it."
@@ -40,6 +43,7 @@ window.Interactions = (() => {
             {
                 id: "crystal_004",
                 name: "Verdant Crystal",
+                type: "Verdant",
                 x: 34,
                 y: 8,
                 description: "A green crystal radiating gentle warmth."
@@ -47,6 +51,7 @@ window.Interactions = (() => {
             {
                 id: "crystal_005",
                 name: "Azure Crystal",
+                type: "Azure",
                 x: 11,
                 y: 25,
                 description: "A mysterious blue crystal."
@@ -54,6 +59,7 @@ window.Interactions = (() => {
             {
                 id: "crystal_006",
                 name: "Violet Crystal",
+                type: "Violet",
                 x: 36,
                 y: 24,
                 description: "A purple crystal with an unusual glow."
