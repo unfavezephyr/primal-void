@@ -133,9 +133,11 @@ function startGame() {
 
     Player.reset(400, 300);
 
-    Interactions.initialize();
-
-    updateCamera();
+      Interactions.initialize();
+    Journal.initialize();
+    JournalUI.initialize();
+    
+updateCamera();
 
     gameRunning = true;
 
