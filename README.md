@@ -33,3 +33,24 @@ Established biology
 - Species: One unique slime breed.
 - Reproduction: Can produce hybrids with otherwise incompatible monster species.
 - Individuality: Each member has its own personality, memories and behavioural traits.
+Established abilities
+1. Adaptive morphology
+- Can change physical size.
+- Can alter its body shape.
+- Can imitate the general appearance of other monsters.
+- Can blend into different monster populations.
+- Can return to its original slime form.
+2. Reproductive adaptation
+Their unusual biology allows them to reproduce with otherwise incompatible monster species.
+
+Their offspring may inherit:
+- Physical characteristics from either parent.
+- Unique slime-like biological properties.
+- Unusual combinations of inherited traits.
+We can establish the exact inheritance rules later.
+3. Concealment
+Their shape-changing ability also helps them avoid unwanted attention, particularly from humans.
+
+Some may spend years disguised as ordinary monsters without being recognised.
+4. Individual differences
+Not every member uses these abilities in the same way. Some may prefer remaining in slime form, while others frequently change their appearance.
