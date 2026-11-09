@@ -26,4 +26,10 @@ Breed	Unique slime breed
 Rarity	Once every 300 years
 Reproduction	Can breed across otherwise incompatible species
 Classification	Exceptional organism
-
+Established biology
+- Appearance cycle: Once every 300 years.
+- Population: Several individuals.
+- Distribution: Scattered across different regions.
+- Species: One unique slime breed.
+- Reproduction: Can produce hybrids with otherwise incompatible monster species.
+- Individuality: Each member has its own personality, memories and behavioural traits.
