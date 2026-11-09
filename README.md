@@ -19,3 +19,11 @@ Resentment	Low
 Memory	Individual + shared
 Development	Juvenile
 Social tendency	Solitary
+Attribute	Description
+Name	Ziggy
+Creature type	Slime
+Breed	Unique slime breed
+Rarity	Once every 300 years
+Reproduction	Can breed across otherwise incompatible species
+Classification	Exceptional organism
+
